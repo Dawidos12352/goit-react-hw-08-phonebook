@@ -1,0 +1,10 @@
+.deleteBtn {
+  margin: 10px 0 0 10px;
+  padding: 5px 0px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.contact {
+  font-size: 20px;
+}
