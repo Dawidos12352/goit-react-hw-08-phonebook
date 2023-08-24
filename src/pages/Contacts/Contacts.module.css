@@ -1,0 +1,6 @@
+section {
+  align-items: center;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}

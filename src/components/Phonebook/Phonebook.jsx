@@ -1,13 +1,13 @@
+import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/operations.js';
-import { selectContacts } from '../../redux/selectors.js';
-import css from './Phonebook.module.css';
-import { nanoid } from 'nanoid';
+import { addContact } from 'redux/contacts/operations';
+import { getContacts } from 'redux/contacts/selectors';
 
-const Phonebook = () => {
+import css from "./Phonebook.module.css"
+export const Phonebook = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(getContacts);
 
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
@@ -23,6 +23,7 @@ const Phonebook = () => {
       default :
     }
   };
+
   const handleSubmit = event => {
     event.preventDefault();
   
@@ -36,15 +37,15 @@ const Phonebook = () => {
     const contact = {
       name,
       number,
-      id: nanoid(),
     };
 
     dispatch(addContact(contact));
     event.target.reset();
   };
+
   return (
     <form className={css.formContact} onSubmit={handleSubmit}>
-      <h3>Name</h3>
+      <h3 className={css.label}>Name</h3>
       <input
         className={css.inputName}
         type="text"
@@ -56,7 +57,7 @@ const Phonebook = () => {
         required
       />
 
-      <h3>Number</h3>
+      <h3 className={css.label}>Number</h3>
       <input
         className={css.inputName}
         type="tel"
@@ -71,5 +72,3 @@ const Phonebook = () => {
     </form>
   );
 };
-
-export default Phonebook;

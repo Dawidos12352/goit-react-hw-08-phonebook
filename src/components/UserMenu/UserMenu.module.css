@@ -1,0 +1,17 @@
+.box {
+  display: flex;
+  align-items: center;
+}
+.user {
+  font-size: 18px;
+  font-weight: 700;
+  justify-content: center;
+}
+.logoutBtn {
+  margin: 10px 0 10px 30px;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 100px;
+  cursor: pointer;
+}
